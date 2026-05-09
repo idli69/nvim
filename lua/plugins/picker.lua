@@ -1,85 +1,34 @@
 return {
-  "ibhagwan/fzf-lua",
-  dependencies = { { "nvim-mini/mini.icons", opts = {} } },
-  keys = {
-    {
-      "<leader>ff",
-      function()
-        require("fzf-lua").files()
-      end,
-      desc = "Find Files",
-    },
-    {
-      "<leader>fg",
-      function()
-        require("fzf-lua").live_grep()
-      end,
-      desc = "Live Grep",
-    },
-    {
-      "<leader>fo",
-      function()
-        require("fzf-lua").oldfiles()
-      end,
-      desc = "Recent Files",
-    },
-    {
-      "<leader>fh",
-      function()
-        require("fzf-lua").help_tags()
-      end,
-      desc = "Help",
-    },
-    {
-      "<leader>fk",
-      function()
-        require("fzf-lua").keymaps()
-      end,
-      desc = "Keymaps",
-    },
-    {
-      "<leader>fc",
-      function()
-        require("fzf-lua").commands()
-      end,
-      desc = "Commands",
-    },
-
-    {
-      "<leader>gs",
-      function()
-        require("fzf-lua").git_status()
-      end,
-      desc = "Git Status",
-    },
-    {
-      "<leader>gb",
-      function()
-        require("fzf-lua").git_branches()
-      end,
-      desc = "Git Branches",
-    },
-    {
-      "<leader>gc",
-      function()
-        require("fzf-lua").git_commits()
-      end,
-      desc = "Git Commits",
-    },
-
-    {
-      "<leader><leader>",
-      function()
-        require("fzf-lua").resume()
-      end,
-      desc = "Resume last picker",
-    },
+  'ibhagwan/fzf-lua',
+  dependencies = {
+    { 'nvim-mini/mini.icons', opts = {} },
   },
-  opts = {
-    winopts = {
-      preview = {
-        scrollbar = false,
+  config = function()
+    local fzf = require('fzf-lua')
+    local map = vim.keymap.set
+
+    fzf.setup({
+      ui_select = true,
+
+      winopts = {
+        preview = {
+          scrollbar = false,
+        },
       },
-    },
-  },
+    })
+
+    map('n', '<leader>ff', fzf.files, { desc = 'Find files' })
+    map('n', '<leader>fg', fzf.live_grep, { desc = 'Live grep' })
+    map('n', '<leader>fo', fzf.oldfiles, { desc = 'Recent files' })
+
+    map('n', '<leader>fh', fzf.help_tags, { desc = 'Help' })
+    map('n', '<leader>fk', fzf.keymaps, { desc = 'Keymaps' })
+    map('n', '<leader>fc', fzf.commands, { desc = 'Commands' })
+
+    map('n', '<leader>gs', fzf.git_status, { desc = 'Git status' })
+    map('n', '<leader>gb', fzf.git_branches, { desc = 'Git branches' })
+    map('n', '<leader>gc', fzf.git_commits, { desc = 'Git commits' })
+
+    map('n', '<leader><leader>', fzf.resume, { desc = 'Resume picker' })
+  end,
 }

@@ -53,3 +53,4 @@ map({ "n", "x" }, "<leader>P", '"+P', { desc = "Paste before from clipboard" })
 
 -- Disable Annoyances
 map("n", "Q", "<nop>", opts)
+map('n', 'J', '<nop>', opts)

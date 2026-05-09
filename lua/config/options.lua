@@ -15,6 +15,14 @@ g.loaded_netrw = 1
 -- GENERAL
 opt.mouse = "a"
 -- opt.clipboard = "unnamedplus"
+-- Cursor shape, no blinking
+opt.guicursor = table.concat({
+  'n-v-c:block',
+  'i-ci-ve:ver25',
+  'r-cr:hor20',
+  'o:hor50',
+  'a:blinkon0',
+}, ',')
 
 opt.swapfile = false
 opt.backup = false
