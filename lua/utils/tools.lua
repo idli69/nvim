@@ -16,8 +16,7 @@ function M.check(list)
   if #bad > 0 then
     vim.schedule(function()
       vim.notify(
-        "Missing tools:\n- " .. table.concat(bad, "\n- ") ..
-        "\n\nInstall them via your package manager.",
+        "Missing tools:\n- " .. table.concat(bad, "\n- ") .. "\n\nInstall them via your package manager.",
         vim.log.levels.WARN,
         { title = "Neovim" }
       )

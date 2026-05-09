@@ -1,46 +1,55 @@
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
--- LEADER
+-- Leader
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- WINDOW NAVIGATION
+-- Windows
+-- Navigation
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
--- WINDOW RESIZE
+-- Resize
 map("n", "<C-Up>", "<cmd>resize +2<cr>", opts)
 map("n", "<C-Down>", "<cmd>resize -2<cr>", opts)
 map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", opts)
 map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", opts)
 
--- BETTER INDENTING
-map("v", "<", "<gv")
-map("v", ">", ">gv")
+-- Editing
+-- Keep selection after indenting
+map("v", "<", "<gv", opts)
+map("v", ">", ">gv", opts)
 
--- MOVE LINES
-map("v", "J", ":m '>+1<CR>gv=gv", opts)
-map("v", "K", ":m '<-2<CR>gv=gv", opts)
+-- Move selected lines
+map("v", "J", ":m '>+1<cr>gv=gv", opts)
+map("v", "K", ":m '<-2<cr>gv=gv", opts)
 
--- KEEP CURSOR CENTERED
-map("n", "<C-d>", "<C-d>zz")
-map("n", "<C-u>", "<C-u>zz")
-map("n", "n", "nzzzv")
-map("n", "N", "Nzzzv")
+-- Movement
+-- Keep cursor centered while jumping
+map("n", "<C-d>", "<C-d>zz", opts)
+map("n", "<C-u>", "<C-u>zz", opts)
+map("n", "n", "nzzzv", opts)
+map("n", "N", "Nzzzv", opts)
 
--- CLEAR SEARCH
+-- Insert-mode arrow movement
+map("i", "<C-j>", "<Down>", opts)
+map("i", "<C-k>", "<Up>", opts)
+map("i", "<C-h>", "<Left>", opts)
+map("i", "<C-l>", "<Right>", opts)
+
+-- Search
 map("n", "<Esc>", "<cmd>noh<cr>", {
   desc = "Clear search highlight",
 })
 
--- DISABLE ACCIDENTAL EX MODE
-map("n", "Q", "<nop>")
+-- Clipboard
+-- System clipboard only. Normal y/p stay internal to Neovim.
+map({ "n", "x" }, "<leader>y", '"+y', { desc = "Yank to clipboard" })
+map({ "n", "x" }, "<leader>p", '"+p', { desc = "Paste from clipboard" })
+map({ "n", "x" }, "<leader>P", '"+P', { desc = "Paste before from clipboard" })
 
--- FAST SCROLL IN INSERT
-map("i", "<C-j>", "<Down>")
-map("i", "<C-k>", "<Up>")
-map("i", "<C-h>", "<Left>")
-map("i", "<C-l>", "<Right>")
+-- Disable Annoyances
+map("n", "Q", "<nop>", opts)

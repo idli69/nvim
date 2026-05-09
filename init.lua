@@ -8,7 +8,7 @@ require("utils.tools").check({
   "cargo",
   "fzf",
   "rg",
-  "fd"
+  "fd",
 })
 
 require("config.options")
