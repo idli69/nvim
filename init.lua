@@ -1,0 +1,17 @@
+require("utils.tools").check({
+  "gcc",
+  "make",
+  "git",
+  "node",
+  "npm",
+  "tree-sitter",
+  "cargo",
+  "fzf",
+  "rg",
+  "fd"
+})
+
+require("config.options")
+require("config.keymaps")
+require("config.lazy")
+require("config.autocmd")
