@@ -3,7 +3,13 @@ return {
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },
-      javascript = { "prettierd", "prettier", stop_after_first = true },
+      html = { "superhtml" },
+      css = { "biome" },
+      javascript = { "biome" },
+      javascriptreact = { "biome" },
+      typescript = { "biome" },
+      typescriptreact = { "biome" },
+      json = { "biome" },
     },
     format_on_save = {
       timeout_ms = 500,

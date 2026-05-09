@@ -21,6 +21,10 @@ return {
     automatic_enable = true,
     ensure_installed = {
       "emmylua_ls",
+      "superhtml",
+      "cssls",
+      "emmet_language_server",
+      "vtsls"
     },
   },
 }
