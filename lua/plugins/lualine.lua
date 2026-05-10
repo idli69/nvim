@@ -3,6 +3,7 @@ return {
   event = "VeryLazy",
   opts = {
     options = {
+      icons_enabled = false,
       theme = "auto",
       component_separators = "",
       section_separators = "",
@@ -16,7 +17,7 @@ return {
       lualine_x = { "diagnostics" },
       lualine_y = { "filetype" },
       lualine_z = {
-        { "location", padding = 0 },
+        { "location", padding = { left = 0, right = 1 } },
       },
     },
     inactive_sections = {

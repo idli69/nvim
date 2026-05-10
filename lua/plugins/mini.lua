@@ -10,29 +10,20 @@ return {
     opts = {},
   },
   { "windwp/nvim-ts-autotag", version = false, opts = {} },
+  { "wakatime/vim-wakatime",  lazy = false },
   {
-    'eero-lehtinen/oklch-color-picker.nvim',
-    event = 'VeryLazy',
-    version = '*',
-    keys = {
-      {
-        '<leader>v',
-        function()
-          require('oklch-color-picker').pick_under_cursor({
-            fallback_open = {},
-          })
-        end,
-        desc = 'Pick color',
-      },
-    },
-    ---@type oklch.Opts
-    opts = {
-      highlight = {
-        style = 'virtual_left',
-        virtual_text = ' ',
-        emphasis = false,
-      },
-    },
-  },
-  { "wakatime/vim-wakatime", lazy = false }
+    "catgoose/nvim-colorizer.lua",
+    event = "BufReadPre",
+    config = function()
+      require("colorizer").setup({
+        options = {
+          parsers = { css_fn = true },
+          display = {
+            mode = "virtualtext",
+            virtualtext = { position = "after" },
+          },
+        },
+      })
+    end
+  }
 }
