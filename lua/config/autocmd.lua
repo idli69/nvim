@@ -85,3 +85,13 @@ api.nvim_create_autocmd('TermOpen', {
     vim.cmd.startinsert()
   end,
 })
+
+api.nvim_create_autocmd({ "TextChanged", "TextChangedI", "InsertLeave" }, {
+  group = augroup("Autosave"),
+  pattern = { "*.html", "*.css" },
+  callback = function()
+    if vim.bo.modified and vim.bo.modifiable and not vim.bo.readonly then
+      vim.cmd("silent! write")
+    end
+  end,
+})

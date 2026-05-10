@@ -8,14 +8,13 @@ return {
     local map = vim.keymap.set
 
     fzf.setup({
-      ui_select = true,
-
       winopts = {
         preview = {
           scrollbar = false,
         },
       },
     })
+    fzf.register_ui_select()
 
     map('n', '<leader>ff', fzf.files, { desc = 'Find files' })
     map('n', '<leader>fg', fzf.live_grep, { desc = 'Live grep' })

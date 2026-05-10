@@ -107,7 +107,7 @@ opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 -- WHITESPACE
 opt.list = true
 opt.listchars = {
-  tab = "» ",
+  tab = "  ",
   trail = "·",
   nbsp = "␣",
 }
