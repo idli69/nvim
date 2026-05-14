@@ -10,7 +10,6 @@ return {
     opts = {},
   },
   { "windwp/nvim-ts-autotag", version = false, opts = {} },
-  { "wakatime/vim-wakatime",  lazy = false },
   {
     "catgoose/nvim-colorizer.lua",
     event = "BufReadPre",
@@ -24,6 +23,6 @@ return {
           },
         },
       })
-    end
-  }
+    end,
+  },
 }
