@@ -18,7 +18,7 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
   },
-  install = { colorscheme = { "catppuccin", "default" } },
+  install = { colorscheme = { "gruvbox-material", "retrobox" } },
   checker = { enabled = false },
   change_detection = { notify = false },
   rocks = {
