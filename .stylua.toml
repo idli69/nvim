@@ -1,0 +1,17 @@
+# Core Indentation (Replicates expandtab with 4 spaces)
+indent_type = "Spaces"
+indent_width = 2
+
+# Maximum line length before layout wrapping triggers
+column_width = 120
+
+# Force standard Unix line endings (\n)
+line_endings = "Unix"
+
+# Visual Style & Readability Priorities
+call_parentheses = "Always"
+collapse_simple_statement = "Never"
+
+# Sorting rules for internal modules
+[sort_requires]
+enabled = true
