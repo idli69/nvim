@@ -6,6 +6,8 @@ local servers = {
 
   "pyrefly",
 
+  "zls",
+
   "vtsls",
   "html",
   "cssls",
@@ -14,9 +16,6 @@ local servers = {
 
 return {
   "mason-org/mason-lspconfig.nvim",
-  opts = {
-    automatic_enable = true,
-  },
   dependencies = {
     "neovim/nvim-lspconfig",
     {
@@ -43,6 +42,7 @@ return {
         formatters_by_ft = {
           lua = { "stylua" },
           python = { "black" },
+          zig = { "zigfmt" },
         },
         format_on_save = {
           timeout_ms = 500,
@@ -50,5 +50,8 @@ return {
         },
       },
     },
+  },
+  opts = {
+    automatic_enable = true,
   },
 }

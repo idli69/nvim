@@ -15,12 +15,14 @@ local languages = {
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    event = "BufReadPost",
     branch = "main",
     build = ":TSUpdate",
   },
   {
     "MeanderingProgrammer/treesitter-modules.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
+    lazy = true,
     opts = {
       ensure_installed = languages,
       fold = { enable = false },

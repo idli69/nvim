@@ -1,6 +1,6 @@
 return {
   "stevearc/oil.nvim",
-  lazy = false,
+  event = "VeryLazy",
   dependencies = {
     "nvim-mini/mini.icons",
   },

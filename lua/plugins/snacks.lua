@@ -2,14 +2,13 @@
 
 return {
   "folke/snacks.nvim",
-  priority = 1000,
-  lazy = false,
+  event = "UIEnter",
   opts = {
     -- 1. Essential Performance & Core UI
     bigfile = { enabled = true }, -- Prevents Neovim from crashing on massive files
     quickfile = { enabled = true }, -- Faster file loading from the terminal
     input = { enabled = true }, -- Clean, lightweight UI for renaming/inputs
-    picker = { enabled = true, ui_select = true, layout = { preset = "ivy" } }, -- The core Telescope replacement
+    picker = { enabled = true, ui_select = true, layout = { preset = "telescope" } }, -- The core Telescope replacement
     notifier = { enabled = true, timeout = 3000 }, -- Minimal notifications
 
     -- 2. Disabled Bloat (Protecting CPU & Memory)
