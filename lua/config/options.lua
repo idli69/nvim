@@ -10,15 +10,15 @@ o.cursorlineopt = "number"
 
 o.signcolumn = "yes"
 o.laststatus = 3
-o.cmdheight = 0
+o.cmdheight = 1
 
 o.showmode = false
 o.pumheight = 10
 
 o.winborder = "rounded"
 
-o.scrolloff = 8
-o.sidescrolloff = 8
+o.scrolloff = 10
+o.sidescrolloff = 10
 
 o.wrap = false
 o.linebreak = true
@@ -27,12 +27,12 @@ o.splitbelow = true
 o.splitright = true
 
 o.fillchars = {
-  eob = " ",
-  fold = " ",
-  foldopen = "",
-  foldclose = "",
-  foldsep = " ",
-  diff = "╱",
+	eob = " ",
+	fold = " ",
+	foldopen = "",
+	foldclose = "",
+	foldsep = " ",
+	diff = "╱",
 }
 
 -- Indentation
@@ -70,11 +70,11 @@ o.undodir = undodir
 
 -- Completion
 o.completeopt = {
-  "menu",
-  "menuone",
-  "noselect",
-  "popup",
-  "fuzzy",
+	"menu",
+	"menuone",
+	"noselect",
+	"popup",
+	"fuzzy",
 }
 
 -- Timing
@@ -92,9 +92,9 @@ o.wildoptions = "pum"
 
 -- Better Editing
 o.backspace = {
-  "indent",
-  "eol",
-  "start",
+	"indent",
+	"eol",
+	"start",
 }
 
 o.whichwrap:append("<>[]hl")
@@ -102,9 +102,9 @@ o.whichwrap:append("<>[]hl")
 -- Invisible Characters
 o.list = true
 o.listchars = {
-  tab = "  ",
-  trail = "·",
-  nbsp = "␣",
+	tab = "  ",
+	trail = "·",
+	nbsp = "␣",
 }
 
 -- Diagnostics Space
