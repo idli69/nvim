@@ -20,6 +20,9 @@ require("conform").setup({
 
 	formatters_by_ft = {
 		lua = { "stylua" },
+		html = { "superhtml" },
+		css = { "biome" },
+		go = { "gofumpt" },
 	},
 })
 
@@ -34,6 +37,9 @@ require("mason-tool-installer").setup({
 		"vtsls",
 		"emmet_language_server",
 		"biome",
+
+		"gopls",
+		"gofumpt",
 	},
 
 	auto_update = true,
