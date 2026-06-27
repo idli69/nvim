@@ -1,46 +1,50 @@
-require("mason").setup({
-	ui = {
-		icons = {
-			package_installed = "✓",
-			package_pending = "➜",
-			package_uninstalled = "✗",
+local lspServers = {
+	"emmylua_ls",
+	"html",
+	"cssls",
+	"emmet_language_server",
+	"tailwindcss",
+	"svelte",
+}
+local lspTools = {
+	"stylua",
+	"prettier",
+	"prettierd",
+}
+
+return {
+	{
+		"mason-org/mason-lspconfig.nvim",
+		dependencies = {
+			{ "mason-org/mason.nvim", opts = {} },
+			"neovim/nvim-lspconfig",
+		},
+		opts = {
+			automatic_enable = lspServers,
+			ensure_installed = lspServers,
 		},
 	},
-})
-
-require("mason-lspconfig").setup({
-	automatic_enable = true,
-})
-
-require("conform").setup({
-	format_on_save = {
-		timeout_ms = 500,
-		lsp_format = "fallback",
+	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		opts = {
+			ensure_installed = lspTools,
+		},
 	},
-
-	formatters_by_ft = {
-		lua = { "stylua" },
-		html = { "superhtml" },
-		css = { "biome" },
-		go = { "gofumpt" },
+	{
+		"stevearc/conform.nvim",
+		opts = {
+			formatters_by_ft = {
+				lua = { "stylua" },
+				html = { "prettierd", "prettier", stop_after_first = true },
+				css = { "prettierd", "prettier", stop_after_first = true },
+				typescript = { "prettierd", "prettier", stop_after_first = true },
+				javascript = { "prettierd", "prettier", stop_after_first = true },
+				svelte = { "prettierd", "prettier", stop_after_first = true },
+			},
+			format_on_save = {
+				timeout_ms = 500,
+				lsp_format = "fallback",
+			},
+		},
 	},
-})
-
-require("mason-tool-installer").setup({
-	ensure_installed = {
-		"emmylua_ls",
-		"stylua",
-
-		"superhtml",
-		"cssls",
-		"tailwindcss",
-		"vtsls",
-		"emmet_language_server",
-		"biome",
-
-		"gopls",
-		"gofumpt",
-	},
-
-	auto_update = true,
-})
+}

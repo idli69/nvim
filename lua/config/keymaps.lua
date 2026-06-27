@@ -9,7 +9,6 @@ g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 
 local map = vim.keymap.set
-
 -- General
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
@@ -49,4 +48,3 @@ map("v", "A-K", ":m '<-2<CR>gv=gv")
 -- Indent
 map("v", "<", "<gv")
 map("v", ">", ">gv")
-

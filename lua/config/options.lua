@@ -1,3 +1,5 @@
+require('vim._core.ui2').enable()
+
 local o = vim.opt
 
 -- UI
@@ -17,7 +19,7 @@ o.pumheight = 10
 
 o.winborder = "rounded"
 
-o.scrolloff = 10
+o.scrolloff = 9999
 o.sidescrolloff = 10
 
 o.wrap = false
@@ -27,19 +29,19 @@ o.splitbelow = true
 o.splitright = true
 
 o.fillchars = {
-	eob = " ",
-	fold = " ",
-	foldopen = "",
-	foldclose = "",
-	foldsep = " ",
-	diff = "╱",
+    eob = " ",
+    fold = " ",
+    foldopen = "",
+    foldclose = "",
+    foldsep = " ",
+    diff = "╱",
 }
 
 -- Indentation
 o.expandtab = true
-o.tabstop = 2
-o.softtabstop = 2
-o.shiftwidth = 2
+o.tabstop = 4
+o.softtabstop = 4
+o.shiftwidth = 4
 o.smartindent = true
 o.breakindent = true
 
@@ -70,11 +72,11 @@ o.undodir = undodir
 
 -- Completion
 o.completeopt = {
-	"menu",
-	"menuone",
-	"noselect",
-	"popup",
-	"fuzzy",
+    "menu",
+    "menuone",
+    "noselect",
+    "popup",
+    "fuzzy",
 }
 
 -- Timing
@@ -92,9 +94,9 @@ o.wildoptions = "pum"
 
 -- Better Editing
 o.backspace = {
-	"indent",
-	"eol",
-	"start",
+    "indent",
+    "eol",
+    "start",
 }
 
 o.whichwrap:append("<>[]hl")
@@ -102,9 +104,9 @@ o.whichwrap:append("<>[]hl")
 -- Invisible Characters
 o.list = true
 o.listchars = {
-	tab = "  ",
-	trail = "·",
-	nbsp = "␣",
+    tab = "  ",
+    trail = "·",
+    nbsp = "␣",
 }
 
 -- Diagnostics Space
