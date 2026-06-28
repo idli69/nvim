@@ -5,11 +5,13 @@ local lspServers = {
 	"emmet_language_server",
 	"tailwindcss",
 	"svelte",
+	"gopls",
 }
 local lspTools = {
 	"stylua",
 	"prettier",
 	"prettierd",
+	"gofumpt",
 }
 
 return {
@@ -40,6 +42,8 @@ return {
 				typescript = { "prettierd", "prettier", stop_after_first = true },
 				javascript = { "prettierd", "prettier", stop_after_first = true },
 				svelte = { "prettierd", "prettier", stop_after_first = true },
+
+				go = { "gofumpt" },
 			},
 			format_on_save = {
 				timeout_ms = 500,

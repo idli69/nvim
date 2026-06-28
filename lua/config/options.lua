@@ -1,4 +1,4 @@
-require('vim._core.ui2').enable()
+require("vim._core.ui2").enable()
 
 local o = vim.opt
 
@@ -14,10 +14,10 @@ o.signcolumn = "yes"
 o.laststatus = 3
 o.cmdheight = 1
 
+o.winborder = "single"
+
 o.showmode = false
 o.pumheight = 10
-
-o.winborder = "rounded"
 
 o.scrolloff = 9999
 o.sidescrolloff = 10
@@ -29,12 +29,12 @@ o.splitbelow = true
 o.splitright = true
 
 o.fillchars = {
-    eob = " ",
-    fold = " ",
-    foldopen = "",
-    foldclose = "",
-    foldsep = " ",
-    diff = "╱",
+	eob = " ",
+	fold = " ",
+	foldopen = "",
+	foldclose = "",
+	foldsep = " ",
+	diff = "╱",
 }
 
 -- Indentation
@@ -72,11 +72,11 @@ o.undodir = undodir
 
 -- Completion
 o.completeopt = {
-    "menu",
-    "menuone",
-    "noselect",
-    "popup",
-    "fuzzy",
+	"menu",
+	"menuone",
+	"noselect",
+	"popup",
+	"fuzzy",
 }
 
 -- Timing
@@ -94,9 +94,9 @@ o.wildoptions = "pum"
 
 -- Better Editing
 o.backspace = {
-    "indent",
-    "eol",
-    "start",
+	"indent",
+	"eol",
+	"start",
 }
 
 o.whichwrap:append("<>[]hl")
@@ -104,9 +104,9 @@ o.whichwrap:append("<>[]hl")
 -- Invisible Characters
 o.list = true
 o.listchars = {
-    tab = "  ",
-    trail = "·",
-    nbsp = "␣",
+	tab = "  ",
+	trail = "·",
+	nbsp = "␣",
 }
 
 -- Diagnostics Space

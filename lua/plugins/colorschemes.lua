@@ -1,15 +1,15 @@
 return {
 	{
-		"olimorris/onedarkpro.nvim",
+		"catppuccin/nvim",
+		name = "catppuccin",
 		priority = 1000,
 		opts = {
-			options = {
-				transparency = true,
-				terminal_colors = true,
-				lualine_transparency = true,
-				highlight_inactive_windows = true,
-			}
-		}
-	}
-
+			flavour = "mocha",
+			transparent_background = false,
+			float = { transparent = true },
+			term_colors = true,
+			default_integrations = true,
+			auto_integrations = true,
+		},
+	},
 }
