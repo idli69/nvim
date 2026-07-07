@@ -13,7 +13,7 @@ return {
 	},
 
 	opts = {
-		start_in_insert = true,
+		start_in_insert = false,
 		persist_mode = true,
 		close_on_exit = true,
 		direction = "float",

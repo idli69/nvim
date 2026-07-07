@@ -1,10 +1,9 @@
 return {
 	"saghen/blink.cmp",
+	event = "InsertEnter",
 	version = "1.*",
 	dependencies = {
-		"rafamadriz/friendly-snippets",
 		"nvim-mini/mini.icons",
-		{ "nvim-mini/mini.pairs", opts = {} },
 	},
 	opts = {
 		keymap = { preset = "super-tab" },

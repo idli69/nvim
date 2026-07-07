@@ -1,10 +1,18 @@
 return {
 	"MeanderingProgrammer/treesitter-modules.nvim",
 	dependencies = { "nvim-treesitter/nvim-treesitter" },
+	event = { "BufReadPost", "BufNewFile" },
 	opts = {
 		ensure_installed = {
-			"html", "css", "javascript", 
-			"svelte", "go", "json", "lua", "bash", "markdown",
+			"html",
+			"css",
+			"javascript",
+			"svelte",
+			"go",
+			"json",
+			"lua",
+			"bash",
+			"markdown",
 		},
 		auto_install = true,
 		fold = { enable = true },
