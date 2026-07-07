@@ -1,0 +1,81 @@
+{
+  "$schema": "https://raw.githubusercontent.com/CppCXY/EmmyLua-LanguageServer/master/schema.json",
+
+  "runtime": {
+    "version": "LuaJIT"
+  },
+
+  "workspace": {
+    "library": [],
+    "ignoreDir": [
+      ".git",
+      ".github",
+      ".vscode",
+      ".idea",
+      "node_modules",
+      "dist",
+      "build",
+      "target",
+      ".cache"
+    ],
+    "maxPreload": 5000,
+    "preloadFileSize": 500,
+    "encoding": "utf-8",
+    "enableReload": true
+  },
+
+  "completion": {
+    "enable": true,
+    "autoRequire": false,
+    "callSnippet": true,
+    "displayContext": 3
+  },
+
+  "signature": {
+    "enable": true,
+    "detail": true
+  },
+
+  "hover": {
+    "enable": true
+  },
+
+  "hint": {
+    "enable": true,
+    "paramHint": true,
+    "indexHint": true,
+    "overrideHint": true,
+    "localHint": false
+  },
+
+  "references": {
+    "enable": true
+  },
+
+  "rename": {
+    "enable": true
+  },
+
+  "semanticTokens": {
+    "enable": true
+  },
+
+  "diagnostics": {
+    "enable": true,
+    "globals": [
+      "vim"
+    ],
+    "disable": []
+  },
+
+  "files": {
+    "associations": [
+      "*.lua"
+    ],
+    "exclude": []
+  },
+
+  "format": {
+    "enable": false
+  }
+}

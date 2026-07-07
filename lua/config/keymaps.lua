@@ -4,10 +4,6 @@ local g = vim.g
 g.mapleader = " "
 g.maplocalleader = " "
 
--- Disable Some Builtins
-g.loaded_netrw = 1
-g.loaded_netrwPlugin = 1
-
 local map = vim.keymap.set
 -- General
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
@@ -48,3 +44,43 @@ map("v", "A-K", ":m '<-2<CR>gv=gv")
 -- Indent
 map("v", "<", "<gv")
 map("v", ">", ">gv")
+
+-- Inlay Hints
+map("n", "<leader>uh", function()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })
+end, { desc = "Toggle Inlay Hints" })
+
+-- LSP Keymaps
+local augroup = vim.api.nvim_create_augroup("UserLsp", { clear = true })
+
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = augroup,
+
+	callback = function(ev)
+		local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
+		local buf = ev.buf
+
+		local bmap = function(mode, lhs, rhs, desc)
+			vim.keymap.set(mode, lhs, rhs, {
+				buffer = buf,
+				silent = true,
+				desc = desc,
+			})
+		end
+
+		bmap("n", "gd", vim.lsp.buf.definition, "Goto Definition")
+		bmap("n", "gr", vim.lsp.buf.references, "References")
+		bmap("n", "K", vim.lsp.buf.hover, "Hover")
+		bmap("n", "J", vim.diagnostic.open_float, "Diagnostics")
+		bmap("n", "ga", vim.lsp.buf.code_action, "Code Action")
+		bmap("n", "gn", vim.lsp.buf.rename, "Rename")
+
+		if client:supports_method("textDocument/documentColor") then
+			vim.lsp.document_color.enable(true, {
+				bufnr = buf,
+			}, {
+				style = "virtual",
+			})
+		end
+	end,
+})
