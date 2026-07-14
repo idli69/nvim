@@ -1,24 +1,24 @@
 local lspServers = {
-	"vtsls",
 	"gopls",
-	"svelte",
-	"tailwindcss",
-	"lua_ls",
+	"emmylua_ls",
 	"html",
 	"cssls",
+	"tailwindcss",
+	"emmet_language_server",
+	"vtsls",
+	"svelte",
 }
 local lspTools = {
 	"tree-sitter-cli",
-	"stylua",
-	"prettier",
 	"prettierd",
+	"prettier",
+	"stylua",
 	"gofumpt",
 }
 
 return {
 	{
 		"neovim/nvim-lspconfig",
-		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			{
 				"mason-org/mason-lspconfig.nvim",
@@ -53,8 +53,6 @@ return {
 	},
 	{
 		"stevearc/conform.nvim",
-		event = { "BufWritePre" },
-		cmd = { "ConformInfo" },
 		opts = {
 			formatters_by_ft = {
 				lua = { "stylua" },
@@ -62,7 +60,7 @@ return {
 				css = { "prettierd", "prettier", stop_after_first = true },
 				typescript = { "prettierd", "prettier", stop_after_first = true },
 				javascript = { "prettierd", "prettier", stop_after_first = true },
-				svelte = { "prettierd", "prettier", stop_after_first = true },
+				svelte = { "svelte", "prettierd", "prettier", stop_after_first = true },
 				go = { "gofumpt" },
 			},
 			format_on_save = {

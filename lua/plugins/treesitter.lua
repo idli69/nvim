@@ -7,6 +7,7 @@ return {
 			"html",
 			"css",
 			"javascript",
+			"typescript",
 			"svelte",
 			"go",
 			"json",
