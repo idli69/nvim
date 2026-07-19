@@ -2,21 +2,13 @@ return {
 	{
 		"folke/snacks.nvim",
 		event = "VeryLazy",
-
 		opts = {
 			picker = {
 				enabled = true,
 				ui_select = true,
-				layout = {
-					preset = "sidebar",
-				},
+				layout = { preset = "telescope" },
 			},
-			input = { enabled = true },
-			statuscolumn = { enabled = true },
-			quickfile = { enabled = true },
-			bigfile = { enabled = true },
 		},
-
 		keys = {
 			{
 				"<leader>ff",
@@ -50,23 +42,15 @@ return {
 	},
 	{
 		"stevearc/oil.nvim",
-		dependencies = { "nvim-mini/mini.icons", version = false, opts = {} },
 		keys = {
-			{
-				"<leader>e",
-				"<cmd>Oil --float<cr>",
-				desc = "Open Oil explorer",
-			},
+			{ "<leader>e", "<cmd>Oil --float<cr>", desc = "Open Oil explorer" },
 		},
-
 		opts = {
 			keymaps = {
 				["<Esc><Esc>"] = { "actions.close", mode = "n" },
 			},
 			use_default_keymaps = true,
-			view_options = {
-				show_hidden = true,
-			},
+			view_options = { show_hidden = true },
 		},
 	},
 }

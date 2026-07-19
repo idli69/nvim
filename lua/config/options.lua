@@ -1,4 +1,3 @@
----@diagnostic disable-next-line: unresolved-require
 require("vim._core.ui2").enable()
 
 local o = vim.opt

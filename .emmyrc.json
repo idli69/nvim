@@ -1,12 +1,52 @@
 {
   "$schema": "https://raw.githubusercontent.com/CppCXY/EmmyLua-LanguageServer/master/schema.json",
-
+  "completion": {
+    "autoRequire": false,
+    "callSnippet": true,
+    "displayContext": 3,
+    "enable": true
+  },
+  "diagnostics": {
+    "disable": ["unresolved-require", "unresolved-require"],
+    "enable": true,
+    "globals": ["vim"]
+  },
+  "files": {
+    "associations": ["*.lua"],
+    "exclude": []
+  },
+  "format": {
+    "enable": false
+  },
+  "hint": {
+    "enable": true,
+    "indexHint": true,
+    "localHint": false,
+    "overrideHint": true,
+    "paramHint": true
+  },
+  "hover": {
+    "enable": true
+  },
+  "references": {
+    "enable": true
+  },
+  "rename": {
+    "enable": true
+  },
   "runtime": {
     "version": "LuaJIT"
   },
-
+  "semanticTokens": {
+    "enable": true
+  },
+  "signature": {
+    "detail": true,
+    "enable": true
+  },
   "workspace": {
-    "library": [],
+    "enableReload": true,
+    "encoding": "utf-8",
     "ignoreDir": [
       ".git",
       ".github",
@@ -18,64 +58,8 @@
       "target",
       ".cache"
     ],
+    "library": [],
     "maxPreload": 5000,
-    "preloadFileSize": 500,
-    "encoding": "utf-8",
-    "enableReload": true
-  },
-
-  "completion": {
-    "enable": true,
-    "autoRequire": false,
-    "callSnippet": true,
-    "displayContext": 3
-  },
-
-  "signature": {
-    "enable": true,
-    "detail": true
-  },
-
-  "hover": {
-    "enable": true
-  },
-
-  "hint": {
-    "enable": true,
-    "paramHint": true,
-    "indexHint": true,
-    "overrideHint": true,
-    "localHint": false
-  },
-
-  "references": {
-    "enable": true
-  },
-
-  "rename": {
-    "enable": true
-  },
-
-  "semanticTokens": {
-    "enable": true
-  },
-
-  "diagnostics": {
-    "enable": true,
-    "globals": [
-      "vim"
-    ],
-    "disable": []
-  },
-
-  "files": {
-    "associations": [
-      "*.lua"
-    ],
-    "exclude": []
-  },
-
-  "format": {
-    "enable": false
+    "preloadFileSize": 500
   }
 }

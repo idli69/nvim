@@ -1,13 +1,6 @@
 return {
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		opts = {
-			flavour = "mocha",
-			transparent_background = true,
-			float = { transparent = true },
-			term_colors = true,
-		},
+		"vague-theme/vague.nvim",
+		opts = { transparent = true },
 	},
 }
